@@ -1,0 +1,28 @@
+<div *ngFor="let post of posts"
+  class="row">
+  <div class="col-md-12 post">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>
+          <a [routerLink]="['/posts', post.id]"
+            class="post-title">{{post.title}}</a>
+        </h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 post-header-line">
+        <i class="fa fa-user"></i> by
+        <a [routerLink]="['/user', post.author.id]">{{post.author.username}}</a> |
+        <i class="fa fa-calendar"></i> {{post.publishedAt}} |
+        <i class="fa fa-thumbs-up"></i> {{post.likesCount}}
+        <i class="fa fa-comment"></i> {{post.commentsCount}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 post-content">
+        <p>{{post.content.substr(0, 150)}}
+          <a [routerLink]="['/posts', post.id]">...read more</a>
+        </p>
+      </div>
+    </div>
+  </div>

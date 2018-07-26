@@ -1,0 +1,26 @@
+<div *ngIf="!commentBox ; else commentbox">
+  <button class="btn btn-block btn-primary"
+    (click)="commentBox = true">Open Comment Box</button>
+</div>
+
+<ng-template #commentbox>
+  <app-comment-create (updateEvent)="reciveUpdate($event)"></app-comment-create>
+</ng-template>
+
+<div class="card mt-4"
+  *ngFor="let comment of comments">
+  <div class="card-header">
+    <a [routerLink]="['/user', comment.author.id]">{{comment?.author.username}} </a>{{comment?.publishedAt}}</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-2">
+        <img class="img-fluid img-circle"
+          src="{{comment?.author.profile_pic}}"
+          alt="">
+      </div>
+      <div class="col-10">
+        <p class="card-text">{{comment?.content}}</p>
+      </div>
+    </div>
+  </div>
+</div>

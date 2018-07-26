@@ -1,0 +1,18 @@
+<div *ngIf="authentication ; else unauthorizedUser">
+  <div class="row">
+    <div class="col-8 mt-5 text-center">
+      <h1>Most liked feeds</h1>
+      <app-most-liked></app-most-liked>
+    </div>
+    <div class="col-4 mt-5 text-center">
+      <h1>Check out your observed feeds</h1>
+    </div>
+  </div>
+</div>
+
+<ng-template #unauthorizedUser>
+  <div class="text-center">
+    <h1>Welcome to FeedBook</h1>
+    <p>To fully use our site's possibilities you should create an account!</p>
+  </div>
+</ng-template>

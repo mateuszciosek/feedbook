@@ -1,0 +1,37 @@
+<div class="post my-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="post-title"> {{post?.title}}
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 post-header-line">
+            {{post?.publishedAt}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 post-content">
+            <p>{{post?.content}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 post-footer">
+            <button *ngIf='post?.liked == false; else dislike'
+                class="btn btn-primary"
+                (click)="likePost()">
+                <i class="fa fa-thumbs-up"></i> {{post?.likesCount}}</button>
+            <ng-template #dislike>
+                <button class="btn btn-primary"
+                    (click)="dislikePost()">
+                    <i class="fa fa-thumbs-down"></i> {{post?.likesCount}}</button>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<button *ngIf="post?.author.username == getUsername()"
+    (click)="delete(post?.id)"
+    class="btn btn-danger my-3">DELETE</button>
+
+<app-comments-list></app-comments-list>

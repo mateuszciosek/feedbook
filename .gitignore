@@ -1,0 +1,5 @@
+FE/feedbook/e2e/
+FE/feedbook/node_modules/
+BE/static_cdn/
+*.sqlite3
+*.pyc

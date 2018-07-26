@@ -1,0 +1,53 @@
+<form [formGroup]="editForm"
+  (ngSubmit)="updateProfile()">
+  <h2>Edit Profile</h2>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input name="email"
+      formControlName="email"
+      type="email"
+      class="form-control">
+    <div *ngIf="errors?.email"
+      class="alert alert-danger">
+      <div>{{ errors?.email[0] }}</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="bio">Bio:</label>
+    <input name="bio"
+      formControlName="bio"
+      type="text"
+      class="form-control">
+    <div *ngIf="errors?.bio"
+      class="alert alert-danger">
+      <div>{{ errors?.bio[0] }}</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Location:</label>
+    <input formControlName="location"
+      name="location"
+      type="text"
+      class="form-control">
+    <div *ngIf="errors?.location"
+      class="alert alert-danger">
+      <div>{{ errors?.location[0] }}</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="profile_pic">Profile Picture:</label>
+    <input formControlName="profile_pic"
+    (change)="onFileChange($event)"
+      type="file"
+      class="form-control">
+    <input type="hidden"
+      name="profile_pic"
+      formControlName="profile_pic">
+    <div *ngIf="errors?.profile_pic"
+      class="alert alert-danger">
+      <div>{{ errors?.profile_pic[0] }}</div>
+    </div>
+  </div>
+  <button class="btn btn-primary btn-block my-3">Submit!</button>
+
+</form>

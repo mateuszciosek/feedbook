@@ -1,0 +1,72 @@
+<form #f="ngForm"
+  (ngSubmit)="register(f.value)">
+  <h2>Registration</h2>
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input ngModel
+      [ngClass]="{'form-error': errors?.username}"
+      #username="ngModel"
+      name="username"
+      type="text"
+      class="form-control">
+    <div *ngIf="errors?.username"
+      class="alert alert-danger">
+      <div>{{ errors?.username[0] }}</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input ngModel
+      name="email"
+      type="email"
+      class="form-control">
+    <div *ngIf="errors?.email"
+      class="alert alert-danger">
+      <div>{{ errors?.email[0] }}</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input ngModel
+      name="password"
+      type="password"
+      class="form-control">
+    <div *ngIf="errors?.password"
+      class="alert alert-danger">
+      <div>{{ errors?.password[0] }}</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="confirm_password">Repeat password:</label>
+    <input ngModel
+      name="confirm_password"
+      type="password"
+      class="form-control">
+    <div *ngIf="errors?.confirm_password"
+      class="alert alert-danger">
+      <div>{{ errors?.confirm_password[0] }}</div>
+    </div>
+  </div>
+  <div class="form-check form-check-inline">
+    <input ngModel
+      class="form-check-input"
+      type="radio"
+      name="gender"
+      id="inlineRadio1"
+      value="M">
+    <label class="form-check-label"
+      for="inlineRadio1">Male</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input ngModel
+      class="form-check-input"
+      type="radio"
+      name="gender"
+      id="inlineRadio2"
+      value="F">
+    <label class="form-check-label"
+      for="inlineRadio2">Female</label>
+  </div>
+  <button class="btn btn-primary btn-block my-3">Submit!</button>
+
+</form>

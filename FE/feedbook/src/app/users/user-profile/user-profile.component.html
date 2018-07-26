@@ -1,0 +1,15 @@
+<div class="row mt-5">
+  <div class="col-4">
+    <img class="img-fluid img-circle"
+      src="{{user?.profile_pic}}"
+      alt="Profile Picture">
+  </div>
+  <div class="col-6 text-center">
+    <h1>{{user?.username}}</h1>
+    <p>{{user?.email}}</p>
+    <p>{{user?.bio}}</p>
+    <a routerLink="/user/profile-edit"
+      *ngIf="user?.id == userId"
+      class="btn btn-primary">Edit Profile</a>
+  </div>
+</div>

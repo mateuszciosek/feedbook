@@ -1,0 +1,52 @@
+<!-- <ul>
+  <li *ngFor="let post of posts">
+    <a [routerLink]="['/posts', post.id]">{{post.title}}</a>
+  </li>
+</ul>
+
+<a routerLink="/posts/create"
+  class="btn btn-primary">Create Post</a>
+
+   -->
+
+<div class="row">
+  <div class="col-md-9">
+    <div *ngFor="let post of posts"
+      class="row">
+      <div class="col-md-12 post">
+        <div class="row">
+          <div class="col-md-12">
+            <h4>
+              <a [routerLink]="['/posts', post.id]"
+                class="post-title">{{post.title}}</a>
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 post-header-line">
+            <i class="fa fa-user"></i> by
+            <a [routerLink]="['/user', post.author.id]">{{post.author.username}}</a> |
+            <i class="fa fa-calendar"></i> {{post.publishedAt}} |
+            <i class="fa fa-thumbs-up"></i> {{post.likesCount}}
+            <i class="fa fa-comment"></i> {{post.commentsCount}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 post-content">
+            <p>{{post.content.substr(0, 150)}}
+              <a [routerLink]="['/posts', post.id]">...read more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 p-5">
+    <h3 class="text-center">Add your own post</h3>
+    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ligula tristique, elementum nunc quis, suscipit tellus.
+      Aenean varius vulputate lorem sit amet tincidunt. Duis mattis mauris urna, eget molestie tortor lobortis quis. Nunc
+      pulvinar rutrum ante. Fusce augue dui, scelerisque sit amet lorem eget, sodales volutpat sapien. Curabitur tempus.</p>
+    <a class="btn btn-success btn-block"
+      routerLink="/posts/create">Share your thoughts</a>
+  </div>
+</div>

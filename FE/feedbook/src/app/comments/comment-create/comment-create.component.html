@@ -1,0 +1,17 @@
+<form #f="ngForm"
+  (ngSubmit)="post(f)">
+  <div class="form-group">
+    <label for="content">Input your comment:</label>
+    <textarea class="form-control"
+      ngModel
+      name="content"
+      id="content"
+      cols="30"
+      rows="3"></textarea>
+    <div *ngIf="errors?.username"
+      class="alert alert-danger">
+      <div>{{ errors?.content[0] }}</div>
+    </div>
+  </div>
+  <button class="btn btn-primary">Add Comment</button>
+</form>

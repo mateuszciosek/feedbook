@@ -1,0 +1,28 @@
+$line-style: 2px solid rgba(131, 122, 122, 1);
+
+a:hover {
+    text-decoration: none;
+}
+
+.post-title {
+    color: rgb(21, 97, 25);
+}
+
+.post {
+    border-bottom: $line-style;
+    margin-top: 30px !important;
+    margin-bottom: 10px;
+}
+
+.post-header-line {
+    background: rgb(177, 236, 171);
+    border-top: $line-style;
+    border-bottom: $line-style;
+    padding: 5px 0px 5px 15px;
+}
+
+.post-content {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    background: rgba(204, 203, 203, 0.3);
+}
